@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment1</title>
+</head>
+
+<body>
+
+    <canvas width="500" height="500" id="canvas" style="border: 2px solid rgb(255, 132, 0)">
+    </canvas>
+
+</body>
+<script>
+
+    let canvas = document.getElementById("canvas");
+    let context = canvas.getContext("2d");
+    context.font = "25px Arial";
+    context.fillStyle = "black";
+    context.fillText("Traffic Light", 120, 20);
+    context.textAlign = "center";
+
+    context.beginPath();
+    context.fillStyle = "black";
+    context.rect(50, 50, 260, 100);
+    context.fill();
+
+    context.beginPath();
+    context.fillStyle = "red";
+    context.arc(100, 100, 35, 0, 360);
+    context.fill();
+
+    context.beginPath();
+    context.fillStyle = "orange";
+    context.arc(180, 100, 35, 0, 360);
+    context.fill();
+
+    context.beginPath();
+    context.fillStyle = "green";
+    context.arc(260, 100, 35, 0, 360);
+    context.fill();
+</script>
+
+</html>
