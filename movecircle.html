@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EvilEyeFollowing</title>
+</head>
+
+<body style="background-color: black;">
+    <canvas id="canvas" width="800" height="600" style="background-color:white;">
+    </canvas>
+    <script>
+        const canvas = document.getElementById("canvas");
+        const context = canvas.getContext("2d");
+        canvas.addEventListener("mousemove", (e) => {
+            console.log(e.clientX, e.clientY);
+            context.clearRect(0, 0, 800, 600);
+
+
+            context.beginPath();
+            context.fillStyle = "blue";
+            context.arc(e.clientX, e.clientY, 60, 0, 360);
+            context.fill();
+
+            context.beginPath();
+            context.fillStyle = "white";
+            context.arc(e.clientX, e.clientY, 30, 0, 360);
+            context.fill();
+
+            context.beginPath();
+            context.fillStyle = "lightblue";
+            context.arc(e.clientX, e.clientY, 20, 0, 360);
+            context.fill();
+
+            context.beginPath();
+            context.fillStyle = "black";
+            context.arc(e.clientX, e.clientY, 10, 0, 360);
+            context.fill();
+        });
+    </script>
+
+</body>
+
+</html>
