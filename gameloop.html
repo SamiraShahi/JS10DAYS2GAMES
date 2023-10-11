@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameLoop</title>
+</head>
+
+<body>
+    <canvas style="background-color:red " id="canvas" height="300" width="300">
+    </canvas>
+    <script>
+        const canvas = document.getElementById("canvas");
+        const c = canvas.getContext("2d");
+
+        //gameloop
+        // let x = 0;
+        // let y = 0;
+        // setInterval(() => {
+        //     c.clearRect(0, 0, 300, 300);
+        //     console.log("x=", x);
+        //     c.beginPath();
+        //     c.rect(x, y, 50, 50);
+        //     c.fill();
+        //     x = x + 1;
+        //     y = y + 1;
+        // }, 1000 / 60);
+        //this all we will do by using request animation frame
+        let x = 0;
+        let y = 0;
+        function renderBox() {
+            c.beginPath();
+            c.rect(x, y, 50, 50);
+            c.fill();
+
+            x += 1;
+            y += 1;
+
+        }
+
+        function update() {
+            //update code ggoes here
+            c.clearRect(0, 0, 300, 300);
+            renderBox();
+
+
+            window.requestAnimationFrame(update);
+        }
+        update();
+        document.addEventListener("mousemove", () => {
+            console.log("moving....")
+        })
+    </script>
+
+</body>
+
+</html>
